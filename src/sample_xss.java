@@ -20,14 +20,14 @@ public class BookDetail_jsp extends HttpJspBase {
 
 		String userData = request.getParameter("Data"); 
 		out.println (userData);
-		printSanitizedName(userData);
+	//	printSanitizedName(userData);
 	}
 	public static void loadName () {
 
 		String userName = request.getParameter("Name"); 
 		out.println (userName);
 
-		printSanitizedName(userName);
+	//	printSanitizedName(userName);
 	}
 
 	public static void loadAccount () {
