@@ -27,7 +27,7 @@ public class BookDetail_jsp extends HttpJspBase {
 		String userName = request.getParameter("Name"); 
 		out.println (userName);
 
-		printSanitizedName(userName);
+	//	printSanitizedName(userName);
 	}
 
 	public static void loadAccount () {
@@ -41,21 +41,21 @@ public class BookDetail_jsp extends HttpJspBase {
 
 		String userNumber = request.getParameter("Number"); 
 
-		printSanitizedName(userNumber);
+	//	printSanitizedName(userNumber);
 	}
 
 	public static void loadField () {
 
 		String userField = request.getParameter("Field"); 
 
-		printSanitizedName(userField);
+	//	printSanitizedName(userField);
 	}
 
 	public static void loadComments () {
 
 		String userComment = request.getParameter("Comment"); 
 
-		printSanitizedName(userComment);
+	//	printSanitizedName(userComment);
 	}
 
 	public static void loadLink () {
