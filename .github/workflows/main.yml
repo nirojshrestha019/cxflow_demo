@@ -29,6 +29,7 @@ jobs:
       run: |
         echo Hello, world!
         cat ${CX_FLOW_CONFIG} > application.yml
+        cat application.yml
         java -jar /app/cx-flow.jar --spring.config.location=./application.yml --scan --cx-team="/CxServer/jbrotsos" --cx-project="${CI_PROJECT_NAME}-${CI_COMMIT_REF_NAME}" --app="${CI_PROJECT_NAME}-${CI_COMMIT_REF_NAME}" --cx-flow.break-build=false --f=. 
 
 
