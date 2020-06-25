@@ -31,6 +31,8 @@ jobs:
       run: |
         echo Hello, world!
         cat ${CX_FLOW_CONFIG} > application.yml
+        java -jar /app/cx-flow.jar --spring.config.location=./application.yml --scan --cx-team="${CHECKMARX_TEAM}" --cx-project="${CI_PROJECT_NAME}-${CI_COMMIT_REF_NAME}" --app="${CI_PROJECT_NAME}-${CI_COMMIT_REF_NAME}" --cx-flow.break-build=false --f=. 
+
 
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
