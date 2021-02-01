@@ -41,7 +41,7 @@ public class BookDetail_jsp extends HttpJspBase {
 
 		String userNumber = request.getParameter("Number"); 
 
-		printSanitizedName(userNumber);
+		//printSanitizedName(userNumber);
 	}
 
 	public static void loadField () {
