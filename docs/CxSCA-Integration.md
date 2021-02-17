@@ -13,23 +13,19 @@ accessControlUrl | URL of Access Control.  Currently always: https://platform.ch
 tenant | Name of CxSCA Tenant
 username | Username of CxSCA Server
 password | Password of CxSCA Server
-filter-severity | List type and can have multiple values [High, Medium, Low]
-filter-score | Double value starting from ‘0.0’
-thresholds-severity | The maximum number of findings (per severity) allowed, before failing the pull request.
-thresholds-score | The maximum acceptable score (of all findings), before failing the pull request.
-enabledZipScan | True/False.  Set to true to change the default CxFlow SCA scan behavior and to perform a zip scan.
+[filter-severity](#filters) | List type and can have multiple values [High, Medium, Low]
+[filter-score](#filters) | Double value starting from ‘0.0’
+[thresholds-severity](#thresholds) | The maximum number of findings (per severity) allowed, before failing the pull request.
+[thresholds-score](#thresholds) | The maximum acceptable score (of all findings), before failing the pull request.
+[enabledZipScan](#zipFolderScan) | True/False.  Set to true to change the default CxFlow SCA scan behavior and to perform a zip scan.
 includeSources | True/False.  Set to true to change the default CxFlow SCA scan behavior to upload the source files.
-team-for-new-projects | Set a project team (i.e. '/TeamAlpha')
+[team-for-new-projects](#scaProjectTeamAssignment) | Set a project team (i.e. '/TeamAlpha')
 
 
 * [SCA Configuration](#configuration)
-* [SCA Filters](#filters)
-* [SCA Thresholds](#thresholds)
 * [SCA Policy Management](#policyManagement)
 * [SCA Configuration As Code](#configurationascode)
 * [SCA Scans From Command Line](#commandline)
-* [SCA ZIP Folder Scan](#zipFolderScan)
-* [SCA Project Team Assignment](#scaProjectTeamAssignment)
 
 ## <a name="configuration">Configuration</a>
 To enable CxSCA, "sca" has to be added as a value to the "enabled-vulnerability-scanners" key within the "cx-flow" map.  You can choose to trigger one or more scanners. The example below has been set to trigger both CxSCA and CxSAST.
@@ -40,7 +36,7 @@ cx-flow:
         - sast
 ```
 
-In addition, add a "sca" map with the following properties:
+In addition, add a "sca" map with at least the following properties:
 ```
 sca:
     appUrl: https://sca.scacheckmarx.com
