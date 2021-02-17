@@ -4,7 +4,7 @@ This document lists the configuration options for your CxFlow yml file when inte
 * For a more general set of config options, see [CxFlow Configuration Options](https://github.com/checkmarx-ltd/cx-flow/wiki/Configuration).
 * To view a large example CxFlow .yml file, please refer to the [Example File](https://github.com/checkmarx-ltd/cx-flow/wiki/YML-Example-Files).
 
-SCA Keywords
+## SCA Keywords
 Keyword | Description
 ------------ | ------------	
 appUrl | URL of CxSCA Server.  Currently always: "https://sca.scacheckmarx.com"
