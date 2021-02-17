@@ -106,9 +106,9 @@ On the creation process or after it, a policy can be defined with 'Break build' 
 
 [[/Images/SCA-policy-creation.png|Example of Policy creation dashboard]]
 
-When performing a scan, if a defined policy is getting violated, Cx-Flow will fail the pull request and it will be marked as failed.
+When performing a scan, if a defined policy is getting violated, CxFlow will fail the pull request and it will be marked as failed.
 * Violated policy occurs when at least one rule condition is getting violated AND when policy 'Break Build' flag in on.
-* In case of a CLI scan which violated a policy: Cx-Flow will fail with exit code 10.
+* In case of a CLI scan which violated a policy: CxFlow will fail with exit code 10.
 * If current scan violated any active CxSCA thresholds and also violated a policy, policy break build has the top priority.
 
 
