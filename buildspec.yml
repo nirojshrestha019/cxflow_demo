@@ -4,12 +4,12 @@ phases:
   install: 
     runtime-versions: 
       java: openjdk11 
-  prebuild:
-    commands:
-      docker pull checkmarx/cx-flow
-  build:
-     commands:
-      docker run checkmarx/cx-flow
+ # prebuild:
+  #  commands:
+  #    docker pull checkmarx/cx-flow
+ # build:
+  #   commands:
+  #    docker run checkmarx/cx-flow
   post_build: 
     commands: 
       - wget -O ~/cxcli.zip https://download.checkmarx.com/9.0.0/Plugins/CxConsolePlugin-2020.2.3.zip
