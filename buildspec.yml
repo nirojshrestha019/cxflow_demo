@@ -12,11 +12,9 @@ phases:
   #    docker run checkmarx/cx-flow
   post_build: 
     commands: 
-       - java -jar /app/cx-flow.jar
-#      - wget -O ~/cxcli.zip https://download.checkmarx.com/9.0.0/Plugins/CxConsolePlugin-2020.2.3.zip
- #     - unzip ~/cxcli.zip -d ~/cxcli 
- #     - rm -rf ~/cxcli.zip 
- #     - chmod +x ~/cxcli/runCxConsole.sh 
-#      - export CX_PROJECT_NAME=$(basename "$CODEBUILD_SOURCE_REPO_URL") 
-#      - export CX_PROJECT_BRANCH=$(basename "$CODEBUILD_SOURCE_VERSION") 
-#      - ~/cxcli/runCxConsole.sh Scan -CxServer $CX_SERVER -CxUser $CX_USER -CxPassword $CX_PASSWORD -ProjectName "$CX_TEAM\\$CX_PROJECT_NAME-$CX_PROJECT_BRANCH" -preset "$CX_PRESET" -LocationType folder -LocationPath $CODEBUILD_SRC_DIR -SASTHigh $CX_HIGH -SASTMedium $CX_MEDIUM -SASTLow $CX_LOW -ReportXML results-$CX_PROJECT_NAME-$CX_PROJECT_BRANCH.xml -ReportPDF results-$CX_PROJECT_NAME-$CX_PROJECT_BRANCH.pdf -Comment "git $CX_PROJECT_BRANCH@$CODEBUILD_RESOLVED_SOURCE_VERSION" -verbose 
+       - java -jar /app/cx-flow.jar \
+         --scan \
+         -f=$(CODEBUILD_SRC_DIR) \
+         --cx-project="CodeBuild Test" \
+         --namespace="CodeBuild Test" \
+         --app="CodeBuild Test"
