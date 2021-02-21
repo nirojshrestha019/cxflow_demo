@@ -27,5 +27,5 @@ phases:
     	  --checkmarx.team="$(CHECKMARX_TEAM)" \
    		  --checkmarx.username=$(CHECKMARX_USERNAME) \
     	  --checkmarx.password=$(CHECKMARX_PASSWORD) \
-    	-  -checkmarx.exclude-folders="$(CHECKMARX_EXCLUDE_FOLDERS)" \
+    	  --checkmarx.exclude-folders="$(CHECKMARX_EXCLUDE_FOLDERS)" \
     	  --checkmarx.exclude-files="$(CHECKMARX_EXCLUDE_FILES)"
