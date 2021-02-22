@@ -7,25 +7,25 @@ phases:
   post_build: 
     commands: 
        - java -jar /app/cx-flow.jar \
-       --scan \
-       --f=$(Build.Repository.LocalPath) \
-       --cx-project="Codebuild-TEMP" \
-       --namespace="Codebuild-TEMP" \
-       --app="Codebuild-TEMP" \
-       --repo-name="Codebuild-TEMP" \
-       --branch="main" \
-       --cx-flow.bug-tracker=$(CX_FLOW_BUG_TRACKER) \
-       --cx-flow.bug-tracker-impl=$(CX_FLOW_BUG_TRACKER) \
-       --cx-flow.filter-severity="$(CHECKMARX_FILTER_SEVERITIES)" \
-       --cx-flow.filter-state="$(CHECKMARX_FILTER_STATE)" \
-       --checkmarx.base-url=$(CHECKMARX_SERVER) \
-       --checkmarx.client-id=$(CHECKMARX_CLIENT_ID) \
-       --checkmarx.client-secret=$(CHECKMARX_CLIENT_SECRET) \
-       --checkmarx.scope="$(CHECKMARX_SCOPE)" \
-       --checkmarx.configuration="$(CHECKMARX_CONFIGURATION)" \
-       --checkmarx.preset="$(CHECKMARX_PRESET)" \
-       --checkmarx.team="$(CHECKMARX_TEAM)" \
-       --checkmarx.username=$(CHECKMARX_USERNAME) \
-       --checkmarx.password=$(CHECKMARX_PASSWORD) \
-       --checkmarx.exclude-folders="$(CHECKMARX_EXCLUDE_FOLDERS)" \
-       --checkmarx.exclude-files="$(CHECKMARX_EXCLUDE_FILES)"
+        --scan \
+        --f=$(Build.Repository.LocalPath) \
+        --cx-project="Codebuild-TEMP" \
+        --namespace="Codebuild-TEMP" \
+        --app="Codebuild-TEMP" \
+        --repo-name="Codebuild-TEMP" \
+        --branch="main" \
+        --cx-flow.bug-tracker=$(CX_FLOW_BUG_TRACKER) \
+        --cx-flow.bug-tracker-impl=$(CX_FLOW_BUG_TRACKER) \
+        --cx-flow.filter-severity="$(CHECKMARX_FILTER_SEVERITIES)" \
+        --cx-flow.filter-state="$(CHECKMARX_FILTER_STATE)" \
+        --checkmarx.base-url=$(CHECKMARX_SERVER) \
+        --checkmarx.client-id=$(CHECKMARX_CLIENT_ID) \
+        --checkmarx.client-secret=$(CHECKMARX_CLIENT_SECRET) \
+        --checkmarx.scope="$(CHECKMARX_SCOPE)" \
+        --checkmarx.configuration="$(CHECKMARX_CONFIGURATION)" \
+        --checkmarx.preset="$(CHECKMARX_PRESET)" \
+        --checkmarx.team="$(CHECKMARX_TEAM)" \
+        --checkmarx.username=$(CHECKMARX_USERNAME) \
+        --checkmarx.password=$(CHECKMARX_PASSWORD) \
+        --checkmarx.exclude-folders="$(CHECKMARX_EXCLUDE_FOLDERS)" \
+        --checkmarx.exclude-files="$(CHECKMARX_EXCLUDE_FILES)"
