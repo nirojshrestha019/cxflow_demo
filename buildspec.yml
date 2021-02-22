@@ -14,9 +14,9 @@ phases:
         --app="Codebuild-TEMP" \
         --repo-name="Codebuild-TEMP" \
         --branch="main" \
-        --cx-flow.bug-tracker=$(CX_FLOW_BUG_TRACKER) \
+        --cx-flow.bug-tracker=$CX_FLOW_BUG_TRACKER \
         --cx-flow.bug-tracker-impl=$(CX_FLOW_BUG_TRACKER) \
-        --cx-flow.filter-severity="$(CHECKMARX_FILTER_SEVERITIES)" \
+        --cx-flow.filter-severity=CHECKMARX_FILTER_SEVERITIES \
         --cx-flow.filter-state="$(CHECKMARX_FILTER_STATE)" \
         --checkmarx.base-url=$(CHECKMARX_SERVER) \
         --checkmarx.client-id=$(CHECKMARX_CLIENT_ID) \
