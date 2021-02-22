@@ -6,25 +6,27 @@ phases:
       java: openjdk11 
   post_build: 
     commands: 
-       - echo $CODEBUILD_SRC_DIR
-       - java -jar /app/cx-flow.jar \
-        --spring.profiles.active="sast" \
-        --scan \
-        --f=$CODEBUILD_SRC_DIR \
-        --cx-project="Codebuild-TEMP" \
-        --app="Codebuild" \
-        --cx-flow.bug-tracker=$CX_FLOW_BUG_TRACKER \
-        --cx-flow.bug-tracker-impl=$CX_FLOW_BUG_TRACKER \
-        --cx-flow.filter-severity=$CHECKMARX_FILTER_SEVERITIES \
-        --cx-flow.filter-state=$CHECKMARX_FILTER_STATE \
-        --checkmarx.base-url=$CHECKMARX_SERVER \
-        --checkmarx.client-id=$CHECKMARX_CLIENT_ID \
-        --checkmarx.client-secret=$CHECKMARX_CLIENT_SECRET \
-        --checkmarx.scope=$CHECKMARX_SCOPE \
-        --checkmarx.configuration=$CHECKMARX_CONFIGURATION \
-        --checkmarx.preset=$CHECKMARX_PRESET \
-        --checkmarx.team=$CHECKMARX_TEAM \
-        --checkmarx.username=$CHECKMARX_USERNAME \
-        --checkmarx.password=$CHECKMARX_PASSWORD \
-        --checkmarx.exclude-folders=$CHECKMARX_EXCLUDE_FOLDERS \
-        --checkmarx.exclude-files=$CHECKMARX_EXCLUDE_FILES
+       ls -la
+       #- java -jar /app/cx-flow.jar --spring.profiles.active="${CX_FLOW_ENABLED_VULNERABILITY_SCANNERS}" --scan --github.api-url="${GITHUB_API_URL}/repos/" --cx-team="${TEAM}" --cx-project="${PROJECT}" --app="${APP}" --f=. ${CXFLOW_PARAMS}
+       #- echo $CODEBUILD_SRC_DIR
+       #- java -jar /app/cx-flow.jar \
+       # --spring.profiles.active="sast" \
+       # --scan \
+       # --f=$CODEBUILD_SRC_DIR \
+       # --cx-project="Codebuild-TEMP" \
+       # --app="Codebuild" \
+       # --cx-flow.bug-tracker=$CX_FLOW_BUG_TRACKER \
+       # --cx-flow.bug-tracker-impl=$CX_FLOW_BUG_TRACKER \
+       # --cx-flow.filter-severity=$CHECKMARX_FILTER_SEVERITIES \
+       # --cx-flow.filter-state=$CHECKMARX_FILTER_STATE \
+       # --checkmarx.base-url=$CHECKMARX_SERVER \
+       # --checkmarx.client-id=$CHECKMARX_CLIENT_ID \
+       # --checkmarx.client-secret=$CHECKMARX_CLIENT_SECRET \
+       # --checkmarx.scope=$CHECKMARX_SCOPE \
+       # --checkmarx.configuration=$CHECKMARX_CONFIGURATION \
+       # --checkmarx.preset=$CHECKMARX_PRESET \
+       # --checkmarx.team=$CHECKMARX_TEAM \
+       # --checkmarx.username=$CHECKMARX_USERNAME \
+       # --checkmarx.password=$CHECKMARX_PASSWORD \
+       # --checkmarx.exclude-folders=$CHECKMARX_EXCLUDE_FOLDERS \
+       # --checkmarx.exclude-files=$CHECKMARX_EXCLUDE_FILES
