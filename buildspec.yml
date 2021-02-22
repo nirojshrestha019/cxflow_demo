@@ -17,13 +17,13 @@ phases:
            --f=. \
            --cx-flow.enabled-vulnerability-scanners="sast"  \
            --checkmarx.version="9.0" \
-           --checkmarx.base-url="$(CHECKMARX_SERVER)" \
+           --checkmarx.base-url=$CHECKMARX_SERVER" \
            --checkmarx.client-secret=$CHECKMARX_CLIENT_SECRET \
            --checkmarx.username=$CHECKMARX_USERNAME \
            --checkmarx.password=$CHECKMARX_PASSWORD \
            --checkmarx.client-id=$CHECKMARX_CLIENT_ID \
            --cx-team=$CHECKMARX_TEAM \
-           --checkmarx.preset="Checkmarx Default" \
+           --checkmarx.preset="$(CHECKMARX_PRESET)" \
            --checkmarx.scope="$(CHECKMARX_SCOPE)" \
            --checkmarx.configuration=$CHECKMARX_CONFIGURATION \
            --cx-flow.bug-tracker="None" \
