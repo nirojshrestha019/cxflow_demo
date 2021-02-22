@@ -6,7 +6,7 @@ phases:
       java: openjdk11 
   post_build: 
     commands: 
-       - echo CHECKMARX_SERVER
+       - echo $CHECKMARX_SERVER
        - java -jar /app/cx-flow.jar \
         --scan \
         --f=$(Build.Repository.LocalPath) \
