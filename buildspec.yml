@@ -13,7 +13,7 @@ phases:
            --app="Codebuild" \
            --f=. \
            --cx-flow.enabled-vulnerability-scanners="sast"  \
-           --checkmarx.version="9.0"
+           --checkmarx.version="9.0" \
            --checkmarx.base-url=$CHECKMARX_SERVER \
            --checkmarx.client-secret=$CHECKMARX_CLIENT_SECRET \
            --checkmarx.username=$CHECKMARX_USERNAME \
