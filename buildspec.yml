@@ -8,6 +8,7 @@ phases:
     commands: 
        - |
          java -jar /app/cx-flow.jar \
+           --spring.config.location=./application.yml \
            --scan \
            --cx-project="Codebuild-main" \
            --app="Codebuild-main" \
