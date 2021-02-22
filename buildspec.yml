@@ -25,9 +25,9 @@ phases:
            --cx-team=$CHECKMARX_TEAM \
            --checkmarx.preset="Checkmarx Default" \
            --checkmarx.scope="access_control_api sast_rest_api" \
-           --checkmarx.configuration=$CHECKMARX_CONFIGURATION
-       # --cx-flow.bug-tracker=$CX_FLOW_BUG_TRACKER \
-       # --cx-flow.bug-tracker-impl=$CX_FLOW_BUG_TRACKER \
+           --checkmarx.configuration=$CHECKMARX_CONFIGURATION \
+           --cx-flow.bug-tracker="None" \
+           --cx-flow.bug-tracker-impl="None" 
        # --cx-flow.filter-severity=$CHECKMARX_FILTER_SEVERITIES \
        # --cx-flow.filter-state=$CHECKMARX_FILTER_STATE \
        # --checkmarx.exclude-folders=$CHECKMARX_EXCLUDE_FOLDERS \
