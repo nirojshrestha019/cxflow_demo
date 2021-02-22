@@ -7,7 +7,7 @@ phases:
   post_build: 
     commands: 
        - |
-         java -jar /app/cx-flow.jar 
+         java -jar /app/cx-flow.jar \
            --spring.profiles.active="sast" \
            --scan \
            --cx-team=$CHECKMARX_TEAM \
