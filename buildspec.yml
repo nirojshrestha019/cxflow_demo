@@ -8,17 +8,17 @@ phases:
     commands: 
        - |
          java -jar /app/cx-flow.jar \
-           --cx-flow.enabled-vulnerability-scanners="sast"  \
            --scan \
-           --cx-team=$CHECKMARX_TEAM \
            --cx-project="Codebuild-Main" \
            --app="Codebuild" \
            --f=. \
+           --cx-flow.enabled-vulnerability-scanners="sast"  \
            --checkmarx.base-url=$CHECKMARX_SERVER \
            --checkmarx.client-secret=$CHECKMARX_CLIENT_SECRET \
            --checkmarx.username=$CHECKMARX_USERNAME \
            --checkmarx.password=$CHECKMARX_PASSWORD \
            --checkmarx.client-id=$CHECKMARX_CLIENT_ID \
+           --checkmarx.team=$CHECKMARX_TEAM \
            --checkmarx.preset=$CHECKMARX_PRESET \
            --checkmarx.scope=$CHECKMARX_SCOPE \
            --checkmarx.configuration=$CHECKMARX_CONFIGURATION
