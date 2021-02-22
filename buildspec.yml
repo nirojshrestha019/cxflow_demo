@@ -31,9 +31,3 @@ phases:
         --checkmarx.password=$CHECKMARX_PASSWORD \
         --checkmarx.exclude-folders=$CHECKMARX_EXCLUDE_FOLDERS \
         --checkmarx.exclude-files=$CHECKMARX_EXCLUDE_FILES
-
-
-         --app="${CI_PROJECT_NAME}-${CI_COMMIT_REF_NAME}" \
-          --branch="${CI_COMMIT_REF_NAME}" \
-          --repo-name="${CI_PROJECT_NAME}" \
-          --namespace="${CI_PROJECT_NAMESPACE}" \
