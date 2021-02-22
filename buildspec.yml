@@ -7,12 +7,11 @@ phases:
   post_build: 
     commands: 
        #ls -la
-       - java -jar /app/cx-flow.jar --spring.profiles.active="sast" --scan --cx-team=$CHECKMARX_TEAM --cx-project="Codebuild-Main" --app="Codebuild" --f=. --checkmarx.base-url=$CHECKMARX_SERVER --checkmarx.client-secret=$CHECKMARX_CLIENT_SECRET --checkmarx.username=$CHECKMARX_USERNAME --checkmarx.password=$CHECKMARX_PASSWORD --checkmarx.client-id=$CHECKMARX_CLIENT_ID
+       - java -jar /app/cx-flow.jar --spring.profiles.active="sast" --scan --cx-team=$CHECKMARX_TEAM --cx-project="Codebuild-Main" --app="Codebuild" --f=. --checkmarx.base-url=$CHECKMARX_SERVER --checkmarx.client-secret=$CHECKMARX_CLIENT_SECRET --checkmarx.username=$CHECKMARX_USERNAME --checkmarx.password=$CHECKMARX_PASSWORD --checkmarx.client-id=$CHECKMARX_CLIENT_ID --checkmarx.preset=$CHECKMARX_PRESET
        # --cx-flow.bug-tracker=$CX_FLOW_BUG_TRACKER \
        # --cx-flow.bug-tracker-impl=$CX_FLOW_BUG_TRACKER \
        # --cx-flow.filter-severity=$CHECKMARX_FILTER_SEVERITIES \
        # --cx-flow.filter-state=$CHECKMARX_FILTER_STATE \
-       # \
        # --checkmarx.scope=$CHECKMARX_SCOPE \
        # --checkmarx.configuration=$CHECKMARX_CONFIGURATION \
        # --checkmarx.preset=$CHECKMARX_PRESET \
