@@ -11,9 +11,9 @@ phases:
            --scan \
            --cx-project="Codebuild-main" \
            --app="Codebuild-main" \
-           --branch="main"
-           --repo-name="Codebuild"
-           --namespace="AWS"
+           --branch="main" \
+           --repo-name="Codebuild" \
+           --namespace="AWS" \
            --f=. \
            --cx-flow.enabled-vulnerability-scanners="sast"  \
            --checkmarx.version="9.0" \
