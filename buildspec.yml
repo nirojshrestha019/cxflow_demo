@@ -24,7 +24,7 @@ phases:
            --checkmarx.client-id=$CHECKMARX_CLIENT_ID \
            --cx-team=$CHECKMARX_TEAM \
            --checkmarx.preset=$CHECKMARX_PRESET \
-           --checkmarx.scope=$CHECKMARX_SCOPE \
+           --checkmarx.scope="access_control_api sast_rest_api" \
            --checkmarx.configuration=$CHECKMARX_CONFIGURATION
        # --cx-flow.bug-tracker=$CX_FLOW_BUG_TRACKER \
        # --cx-flow.bug-tracker-impl=$CX_FLOW_BUG_TRACKER \
