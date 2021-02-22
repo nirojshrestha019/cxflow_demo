@@ -8,7 +8,7 @@ phases:
     commands: 
        - |
          java -jar /app/cx-flow.jar \
-           --spring.profiles.active="sast" \
+           --cx-flow.enabled-vulnerability-scanners="sast"  \
            --scan \
            --cx-team=$CHECKMARX_TEAM \
            --cx-project="Codebuild-Main" \
