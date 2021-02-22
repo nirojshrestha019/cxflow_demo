@@ -13,6 +13,9 @@ phases:
         --f=$CODEBUILD_SRC_DIR \
         --cx-project="Codebuild-TEMP" \
         --app="Codebuild-TEMP" \
+        --branch="main" \
+        --repo-name="Codebuild" \
+        --namespace="AWS" \
         --cx-flow.bug-tracker=$CX_FLOW_BUG_TRACKER \
         --cx-flow.bug-tracker-impl=$CX_FLOW_BUG_TRACKER \
         --cx-flow.filter-severity=$CHECKMARX_FILTER_SEVERITIES \
@@ -28,3 +31,9 @@ phases:
         --checkmarx.password=$CHECKMARX_PASSWORD \
         --checkmarx.exclude-folders=$CHECKMARX_EXCLUDE_FOLDERS \
         --checkmarx.exclude-files=$CHECKMARX_EXCLUDE_FILES
+
+
+         --app="${CI_PROJECT_NAME}-${CI_COMMIT_REF_NAME}" \
+          --branch="${CI_COMMIT_REF_NAME}" \
+          --repo-name="${CI_PROJECT_NAME}" \
+          --namespace="${CI_PROJECT_NAMESPACE}" \
