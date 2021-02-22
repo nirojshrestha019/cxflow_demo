@@ -6,13 +6,14 @@ phases:
       java: openjdk11 
   post_build: 
     commands: 
+       - echo $CODEBUILD_SRC_DIR
        - java -jar /app/cx-flow.jar \
         --scan \
         --f=$CODEBUILD_SRC_DIR \
         --cx-project="Codebuild-TEMP" \
-        --namespace="Codebuild-TEMP" \
+        --namespace="Codebuild" \
         --app="Codebuild-TEMP" \
-        --repo-name="Codebuild-TEMP" \
+        --repo-name="Codebuild" \
         --branch="main" \
         --cx-flow.bug-tracker=$CX_FLOW_BUG_TRACKER \
         --cx-flow.bug-tracker-impl=$CX_FLOW_BUG_TRACKER \
