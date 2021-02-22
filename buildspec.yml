@@ -6,6 +6,7 @@ phases:
       java: openjdk11 
   post_build: 
     commands: 
+       - echo ${CURRENT_ENVIORNMENT}
        - |
          java -jar /app/cx-flow.jar \
            --scan \
