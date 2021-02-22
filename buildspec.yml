@@ -9,8 +9,11 @@ phases:
        - |
          java -jar /app/cx-flow.jar \
            --scan \
-           --cx-project="Codebuild-Main" \
-           --app="Codebuild" \
+           --cx-project="Codebuild-main" \
+           --app="Codebuild-main" \
+           --branch="main"
+           --repo-name="Codebuild"
+           --namespace="AWS"
            --f=. \
            --cx-flow.enabled-vulnerability-scanners="sast"  \
            --checkmarx.version="9.0" \
@@ -19,7 +22,7 @@ phases:
            --checkmarx.username=$CHECKMARX_USERNAME \
            --checkmarx.password=$CHECKMARX_PASSWORD \
            --checkmarx.client-id=$CHECKMARX_CLIENT_ID \
-           --checkmarx.team=$CHECKMARX_TEAM \
+           --cx-team=$CHECKMARX_TEAM \
            --checkmarx.preset=$CHECKMARX_PRESET \
            --checkmarx.scope=$CHECKMARX_SCOPE \
            --checkmarx.configuration=$CHECKMARX_CONFIGURATION
@@ -29,3 +32,4 @@ phases:
        # --cx-flow.filter-state=$CHECKMARX_FILTER_STATE \
        # --checkmarx.exclude-folders=$CHECKMARX_EXCLUDE_FOLDERS \
        # --checkmarx.exclude-files=$CHECKMARX_EXCLUDE_FILES
+
