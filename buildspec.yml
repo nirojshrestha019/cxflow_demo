@@ -6,10 +6,9 @@ phases:
       java: openjdk11 
   post_build: 
     commands: 
-       - echo $CHECKMARX_SERVER
        - java -jar /app/cx-flow.jar \
         --scan \
-        --f=$(Build.Repository.LocalPath) \
+        --f=$CODEBUILD_SRC_DIR \
         --cx-project="Codebuild-TEMP" \
         --namespace="Codebuild-TEMP" \
         --app="Codebuild-TEMP" \
