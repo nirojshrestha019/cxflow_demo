@@ -8,7 +8,7 @@ phases:
     commands: 
        - echo $CODEBUILD_SRC_DIR
        - java -jar /app/cx-flow.jar \
-        --spring.profiles.active="sast"
+        --spring.profiles.active="sast" \
         --scan \
         --f=$CODEBUILD_SRC_DIR \
         --cx-project="Codebuild-TEMP" \
