@@ -29,5 +29,6 @@ phases:
            --cx-flow.filter-severity=$CHECKMARX_FILTER_SEVERITIES \
            --cx-flow.filter-state=$CHECKMARX_FILTER_STATE \
            --checkmarx.exclude-folders=$CHECKMARX_EXCLUDE_FOLDERS \
-           --checkmarx.exclude-files=$CHECKMARX_EXCLUDE_FILES
+           --checkmarx.exclude-files=$CHECKMARX_EXCLUDE_FILES \
+           "$CHECKMARX_PARAMS"
 
