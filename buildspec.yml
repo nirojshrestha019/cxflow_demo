@@ -21,7 +21,7 @@ phases:
            --checkmarx.password=$CHECKMARX_PASSWORD \
            --checkmarx.client-id=$CHECKMARX_CLIENT_ID \
            --cx-team=$CHECKMARX_TEAM \
-           --checkmarx.preset="$CHECKMARX_PRESET" \
+           --checkmarx.preset="Checkmarx Default" \
            --checkmarx.scope="$CHECKMARX_SCOPE" \
            --checkmarx.configuration=$CHECKMARX_CONFIGURATION \
            --cx-flow.bug-tracker="None" \
