@@ -1,7 +1,7 @@
 version: 0.2 
 
-#env:
-#  variables:
+env:
+  variables:
 #     ADD_PARAMS: "--jira.url=$JIRA_URL --jira.username=$JIRA_USER --jira.token=$JIRA_TOKEN"
       GH_BRANCH: xxx # refs/heads/<branch_name>
       GH_REPO_NAME: xxx
