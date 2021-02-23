@@ -1,8 +1,5 @@
 version: 0.2 
 
-env:
- secrets-manager:
-    CX_PASS: CHECKMARX_PASSWORD
 phases: 
   post_build: 
     commands: 
@@ -28,9 +25,9 @@ phases:
            --checkmarx.scope="$CHECKMARX_SCOPE" \
            --checkmarx.configuration=$CHECKMARX_CONFIGURATION \
            --cx-flow.bug-tracker="None" \
-           --cx-flow.bug-tracker-impl="None" 
-       # --cx-flow.filter-severity=$CHECKMARX_FILTER_SEVERITIES \
-       # --cx-flow.filter-state=$CHECKMARX_FILTER_STATE \
-       # --checkmarx.exclude-folders=$CHECKMARX_EXCLUDE_FOLDERS \
-       # --checkmarx.exclude-files=$CHECKMARX_EXCLUDE_FILES
+           --cx-flow.bug-tracker-impl="None" \
+           --cx-flow.filter-severity=$CHECKMARX_FILTER_SEVERITIES \
+           --cx-flow.filter-state=$CHECKMARX_FILTER_STATE \
+           --checkmarx.exclude-folders=$CHECKMARX_EXCLUDE_FOLDERS \
+           --checkmarx.exclude-files=$CHECKMARX_EXCLUDE_FILES
 
