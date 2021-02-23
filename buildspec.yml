@@ -2,10 +2,11 @@ version: 0.2
 
 env:
   variables:
-    GH_BRANCH: "$CODEBUILD_WEBHOOK_HEAD_REF" # refs/heads/<branch_name>
-    GH_REPO_NAME: "cxflow_demo"
-    GH_REPO_OWNER: "cxflow_demo" # Codertocat
-    ADD_PARAMS: "--namespace=$GH_REPO_OWNER --repo-name=$GH_REPO_NAME --branch=$GH_BRANCH"
+    #GH_BRANCH: "$CODEBUILD_WEBHOOK_HEAD_REF" # refs/heads/<branch_name>
+    #GH_REPO_NAME: "cxflow_demo"
+    #GH_REPO_OWNER: "cxflow_demo" # Codertocat
+    #ADD_PARAMS: "--namespace=$GH_REPO_OWNER --repo-name=$GH_REPO_NAME --branch=$GH_BRANCH"
+    ADD_PARAMS: --config=cx.config checkmarx.settings-override=true --jira.url="$JIRA_URL" --jira.username="$JIRA_USER" --jira.token="$JIRA_TOKEN
 phases: 
   pre_build: 
     commands: 
@@ -32,9 +33,9 @@ phases:
            --checkmarx.configuration="$CHECKMARX_CONFIGURATION" \
            --cx-flow.bug-tracker="GitHub" \
            --cx-flow.bug-tracker-impl="GitHub" \
-           --cx-flow.filter-severity=$CHECKMARX_FILTER_SEVERITIES \
-           --cx-flow.filter-state=$CHECKMARX_FILTER_STATE \
-           --checkmarx.exclude-folders=$CHECKMARX_EXCLUDE_FOLDERS \
-           --checkmarx.exclude-files=$CHECKMARX_EXCLUDE_FILES \
+           --cx-flow.filter-severity="$CHECKMARX_FILTER_SEVERITIES" \
+           --cx-flow.filter-state="$CHECKMARX_FILTER_STATE" \
+           --checkmarx.exclude-folders="$CHECKMARX_EXCLUDE_FOLDERS" \
+           --checkmarx.exclude-files="$CHECKMARX_EXCLUDE_FILES" \
            "$ADD_PARAMS"
 
