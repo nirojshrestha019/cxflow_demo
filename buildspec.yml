@@ -2,6 +2,7 @@ version: 0.2
 
 env:
   variables:
+    CHECKMARX_BUGTRACKER: "Jira"
     #GH_BRANCH: "$CODEBUILD_WEBHOOK_HEAD_REF" # refs/heads/<branch_name>
     #GH_REPO_NAME: "cxflow_demo"
     #GH_REPO_OWNER: "cxflow_demo" # Codertocat
@@ -31,8 +32,8 @@ phases:
            --checkmarx.preset="$CHECKMARX_PRESET" \
            --checkmarx.scope="$CHECKMARX_SCOPE" \
            --checkmarx.configuration="$CHECKMARX_CONFIGURATION" \
-           --cx-flow.bug-tracker="GitHub" \
-           --cx-flow.bug-tracker-impl="GitHub" \
+           --cx-flow.bug-tracker="$CHECKMARX_BUGTRACKER" \
+           --cx-flow.bug-tracker-impl="$CHECKMARX_BUGTRACKER" \
            --cx-flow.filter-severity="$CHECKMARX_FILTER_SEVERITIES" \
            --cx-flow.filter-state="$CHECKMARX_FILTER_STATE" \
            --checkmarx.exclude-folders="$CHECKMARX_EXCLUDE_FOLDERS" \
