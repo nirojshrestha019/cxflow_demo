@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    CHECKMARX_BUGTRACKER: "Jira"
+    CHECKMARX_BUGTRACKER: "None"
     #GH_BRANCH: "$CODEBUILD_WEBHOOK_HEAD_REF" # refs/heads/<branch_name>
     #GH_REPO_NAME: "cxflow_demo"
     #GH_REPO_OWNER: "cxflow_demo" # Codertocat
