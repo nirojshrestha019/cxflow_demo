@@ -3,6 +3,8 @@ version: 0.2
 env:
   variables:
     CHECKMARX_BUGTRACKER: "None"
+    CX_PROJECT_NAME: $(basename "$CODEBUILD_SOURCE_REPO_URL") 
+    CX_PROJECT_BRANCH: $(basename "$CODEBUILD_SOURCE_VERSION") 
     #GH_BRANCH: "$CODEBUILD_WEBHOOK_HEAD_REF" # refs/heads/<branch_name>
     #GH_REPO_NAME: "cxflow_demo"
     #GH_REPO_OWNER: "cxflow_demo" # Codertocat
