@@ -13,7 +13,7 @@ phases:
            --repo-name="Codebuild" \
            --namespace="AWS" \
            --f=. \
-           --cx-flow.enabled-vulnerability-scanners="sast"  \
+           --cx-flow.enabled-vulnerability-scanners="$CHECKMARX_SCANNERS"  \
            --checkmarx.version="9.0" \
            --checkmarx.base-url=$CHECKMARX_SERVER \
            --checkmarx.client-secret=$CHECKMARX_CLIENT_SECRET \
@@ -21,7 +21,7 @@ phases:
            --checkmarx.password=$CHECKMARX_PASSWORD \
            --checkmarx.client-id=$CHECKMARX_CLIENT_ID \
            --cx-team=$CHECKMARX_TEAM \
-           --checkmarx.preset="Checkmarx Default" \
+           --checkmarx.preset="$CHECKMARX_PRESET" \
            --checkmarx.scope="$CHECKMARX_SCOPE" \
            --checkmarx.configuration=$CHECKMARX_CONFIGURATION \
            --cx-flow.bug-tracker="None" \
