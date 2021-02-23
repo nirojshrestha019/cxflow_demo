@@ -14,10 +14,10 @@ phases:
          java -jar /app/cx-flow.jar \
            --scan \
            --cx-project="Codebuild-main" \
-           --app="Codebuild-main" \
+           --app="cxflow_demo" \
            --branch="main" \
-           --repo-name="Codebuild" \
-           --namespace="AWS" \
+           --repo-name="cxflow_demo" \
+           --namespace="cxflow_demo" \
            --f=. \
            --cx-flow.enabled-vulnerability-scanners="$CHECKMARX_SCANNERS"  \
            --checkmarx.version="9.0" \
