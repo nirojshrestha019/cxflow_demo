@@ -1,5 +1,8 @@
 version: 0.2 
- 
+
+env:
+ secrets-manager:
+    CX_PASS: CHECKMARX_PASSWORD
 phases: 
   post_build: 
     commands: 
