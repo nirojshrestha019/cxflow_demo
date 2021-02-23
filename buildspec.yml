@@ -1,12 +1,11 @@
 version: 0.2 
 
-#env:
-#  variables:
-#     ADD_PARAMS: "--jira.url=$JIRA_URL --jira.username=$JIRA_USER --jira.token=$JIRA_TOKEN"
-#      GH_BRANCH: xxx # refs/heads/<branch_name>
-#      GH_REPO_NAME: xxx
-#      GH_NAMESPACE: xxxxx # Codertocat
-#      ADD_PARAMS: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }}
+env:
+  variables:
+    GH_BRANCH: "$CODEBUILD_WEBHOOK_HEAD_REF" # refs/heads/<branch_name>
+    GH_REPO_NAME: "cxflow_demo"
+    GH_REPO_OWNER: "cxflow_demo" # Codertocat
+    ADD_PARAMS: "--namespace=$GH_REPO_OWNER --repo-name=$GH_REPO_NAME --branch=$GH_BRANCH"
 phases: 
   pre_build: 
     commands: 
