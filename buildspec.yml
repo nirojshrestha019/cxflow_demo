@@ -3,8 +3,12 @@ version: 0.2
 #env:
 #  variables:
 #     ADD_PARAMS: "--jira.url=$JIRA_URL --jira.username=$JIRA_USER --jira.token=$JIRA_TOKEN"
+      GH_BRANCH: xxx # refs/heads/<branch_name>
+      GH_REPO_NAME: xxx
+      GH_NAMESPACE: xxxxx # Codertocat
+      ADD_PARAMS: --namespace=${{ github.repository_owner }} --repo-name=${{ github.event.repository.name }} --branch=${{ github.ref }}
 phases: 
-  post_build: 
+  pre_build: 
     commands: 
        - env
        - |
@@ -18,15 +22,15 @@ phases:
            --f=. \
            --cx-flow.enabled-vulnerability-scanners="$CHECKMARX_SCANNERS"  \
            --checkmarx.version="9.0" \
-           --checkmarx.base-url=$CHECKMARX_SERVER \
-           --checkmarx.client-secret=$CHECKMARX_CLIENT_SECRET \
-           --checkmarx.username=$CHECKMARX_USERNAME \
-           --checkmarx.password=$CHECKMARX_PASSWORD \
-           --checkmarx.client-id=$CHECKMARX_CLIENT_ID \
-           --cx-team=$CHECKMARX_TEAM \
+           --checkmarx.base-url="$CHECKMARX_SERVER" \
+           --checkmarx.client-secret="$CHECKMARX_CLIENT_SECRET" \
+           --checkmarx.username="$CHECKMARX_USERNAME" \
+           --checkmarx.password="$CHECKMARX_PASSWORD" \
+           --checkmarx.client-id="$CHECKMARX_CLIENT_ID" \
+           --cx-team="$CHECKMARX_TEAM" \
            --checkmarx.preset="$CHECKMARX_PRESET" \
            --checkmarx.scope="$CHECKMARX_SCOPE" \
-           --checkmarx.configuration=$CHECKMARX_CONFIGURATION \
+           --checkmarx.configuration="$CHECKMARX_CONFIGURATION" \
            --cx-flow.bug-tracker="GitHub" \
            --cx-flow.bug-tracker-impl="GitHub" \
            --cx-flow.filter-severity=$CHECKMARX_FILTER_SEVERITIES \
