@@ -11,18 +11,18 @@ env:
 phases: 
   pre_build: 
     commands: 
-       - export CX_PROJECT_NAME=$(basename "$CODEBUILD_SOURCE_REPO_URL" .git)
-       - export CX_PROJECT_BRANCH=$(basename "$CODEBUILD_WEBHOOK_HEAD_REF") 
-       - export CX1=$(echo $CODEBUILD_BUILD_ID | cut -f1 -d:)
+       - export CX_REPO_NAME=$(basename "$CODEBUILD_SOURCE_REPO_URL" .git)
+       - export CX_REPO_BRANCH=$(basename "$CODEBUILD_WEBHOOK_HEAD_REF") 
+       - export CX_PROJECT_NAME=$(echo "$CODEBUILD_BUILD_ID" | cut -f1 -d:)
        - env
        - |
          java -jar /app/cx-flow.jar \
            --scan \
-           --cx-project="Codebuild-main" \
-           --app="$CX_PROJECT_NAME" \
-           --branch="CX_PROJECT_BRANCH  " \
-           --repo-name="$CX_PROJECT_NAME" \
-           --namespace="$CX_PROJECT_NAME" \
+           --cx-project="$CX_PROJECT_NAME" \
+           --app="$CX_REPO_NAME" \
+           --branch="$CX_REPO_BRANCH" \
+           --repo-name="$CX_REPO_NAME" \
+           --namespace="$CX_REPO_NAME" \
            --f=. \
            --cx-flow.enabled-vulnerability-scanners="$CHECKMARX_SCANNERS"  \
            --checkmarx.version="9.0" \
