@@ -15,7 +15,7 @@ phases:
        - |
          java -jar /app/cx-flow.jar \
            --scan \
-           --cx-project="$CX_PROJECT_NAME" \
+           --cx-project="$CX_REPO_NAME"-"$CX_REPO_BRANCH" \
            --app="$CX_REPO_NAME" \
            --branch="$CX_REPO_BRANCH" \
            --repo-name="$CX_REPO_NAME" \
