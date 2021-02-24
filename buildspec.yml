@@ -3,9 +3,6 @@ version: 0.2
 env:
   variables:
     CHECKMARX_BUGTRACKER: "None"
-    #GH_BRANCH: "$CODEBUILD_WEBHOOK_HEAD_REF" # refs/heads/<branch_name>
-    #GH_REPO_NAME: "cxflow_demo"
-    #GH_REPO_OWNER: "cxflow_demo" # Codertocat
     #ADD_PARAMS: "--namespace=$GH_REPO_OWNER --repo-name=$GH_REPO_NAME --branch=$GH_BRANCH"
     #ADD_PARAMS: "--config=cx.config --checkmarx.settings-override=true --jira.url=$JIRA_URL --jira.username=$JIRA_USER --jira.token=$JIRA_TOKEN"
 phases: 
