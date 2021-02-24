@@ -13,7 +13,7 @@ phases:
     commands: 
        - export CX_PROJECT_NAME=$(basename "$CODEBUILD_SOURCE_REPO_URL" .git)
        - export CX_PROJECT_BRANCH=$(basename "$CODEBUILD_WEBHOOK_HEAD_REF") 
-       - export TEST=IFS=’:’ read -ra NAMES <<< "$CODEBUILD_BUILD_ID" echo ${NAMES[1]}
+       - export CX1=$(echo $CODEBUILD_BUILD_ID | cut -f1 -d-)
        - env
        - |
          java -jar /app/cx-flow.jar \
