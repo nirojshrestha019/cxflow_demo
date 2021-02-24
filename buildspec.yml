@@ -3,8 +3,8 @@ version: 0.2
 env:
   variables:
     CHECKMARX_BUGTRACKER: "None"
-    #ADD_PARAMS: "--namespace=$GH_REPO_OWNER --repo-name=$GH_REPO_NAME --branch=$GH_BRANCH"
-    #ADD_PARAMS: "--config=cx.config --checkmarx.settings-override=true --jira.url=$JIRA_URL --jira.username=$JIRA_USER --jira.token=$JIRA_TOKEN"
+    #ADDITIONAL_PARAMS: "--namespace=$GH_REPO_OWNER --repo-name=$GH_REPO_NAME --branch=$GH_BRANCH"
+    #ADDITIONAL_PARAMS: "--config=cx.config --checkmarx.settings-override=true --jira.url=$JIRA_URL --jira.username=$JIRA_USER --jira.token=$JIRA_TOKEN"
 phases: 
   pre_build: 
     commands: 
@@ -38,5 +38,5 @@ phases:
            --cx-flow.filter-state="$CHECKMARX_FILTER_STATE" \
            --checkmarx.exclude-folders="$CHECKMARX_EXCLUDE_FOLDERS" \
            --checkmarx.exclude-files="$CHECKMARX_EXCLUDE_FILES" \
-           "$ADD_PARAMS"
+           "$ADDITIONAL_PARAMS"
 
