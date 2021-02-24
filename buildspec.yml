@@ -11,7 +11,8 @@ env:
 phases: 
   pre_build: 
     commands: 
-       - export CX_PROJECT_NAME="$CODEBUILD_SOURCE_REPO_URL##*/"
+       - export CX_PROJECT_NAME=$(basename "$CODEBUILD_SOURCE_REPO_URL")
+       - export CX_PROJECT_NAME1=$(echo "(basename "$CODEBUILD_SOURCE_REPO_URL") | cut -f 1 -d '.')
        - export CX_PROJECT_BRANCH=$(basename "$CODEBUILD_SOURCE_VERSION") 
        - env
        - |
