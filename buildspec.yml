@@ -3,6 +3,7 @@ version: 0.2
 env:
   variables:
     CHECKMARX_BUGTRACKER: "None"
+    ADDITIONAL_PARAMS: ""
 phases: 
   pre_build: 
     commands: 
