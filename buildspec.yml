@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    CHECKMARX_BUGTRACKER: "None"
+    CHECKMARX_BUGTRACKER: "None" # or JIRA
     #ADDITIONAL_PARAMS: "--namespace=$GH_REPO_OWNER --repo-name=$GH_REPO_NAME --branch=$GH_BRANCH"
     #ADDITIONAL_PARAMS: "--config=cx.config --checkmarx.settings-override=true --jira.url=$JIRA_URL --jira.username=$JIRA_USER --jira.token=$JIRA_TOKEN"
 phases: 
