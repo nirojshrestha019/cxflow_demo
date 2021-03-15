@@ -36,7 +36,7 @@ phases:
            export CX_PROJECT=$(echo "$CODEBUILD_BUILD_ID" | cut -f1 -d:)
          fi
        - |
-         java -jar /app/cx-flow.jar \
+         ${CX_FLOW_EXE} \
           --scan \
           --app="${CX_REPO_NAME}" \
           --namespace="${CX_REPO_NAME}" \
