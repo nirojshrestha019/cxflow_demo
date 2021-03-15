@@ -2,39 +2,44 @@ version: 0.2
 
 env:
   variables:
-    CHECKMARX_BUGTRACKER: "None"
-    ADDITIONAL_PARAMS: ""
+    CX_FLOW_BUG_TRACKER: "None"
+    CX_FLOW_BUG_TRACKER_IMPL: ${CX_FLOW_BUG_TRACKER}
+    CX_FLOW_EXE: "java -jar /app/cx-flow.jar"
+    CHECKMARX_VERSION: "9.0"
+    CHECKMARX_SETTINGS_OVERRIDE: "false"
+    CHECKMARX_EXCLUDE_FILES: ""
+    CHECKMARX_EXCLUDE_FOLDERS: ""
+    CHECKMARX_CONFIGURATION: "Default Configuration"
+    CHECKMARX_SCAN_PRESET: "Checkmarx Default"
+    CX_FLOW_FILTER_SEVERITY: "High"
+    CX_FLOW_FILTER_CATEGORY: ""
+    CX_FLOW_FILTER_CWE: ""
+    CX_FLOW_FILTER_STATUS: ""
+    CX_FLOW_FILTER_STATE: ""
+    CX_FLOW_ENABLED_VULNERABILITY_SCANNERS: sast
+    CX_TEAM: "/CxServer/"
+    CX_FLOW_BREAK_BUILD: "false"
+    SCA_FILTER_SEVERITY: ""
+    SCA_FILTER_SCORE: ""
+    SCA_THRESHOLDS_SCORE: ""
+    SCA_TEAM: ""
+    PARAMS: ""
 phases: 
   pre_build: 
     commands: 
        - export CX_REPO_NAME=$(basename "$CODEBUILD_SOURCE_REPO_URL" .git)
        - export CX_REPO_BRANCH=$(basename "$CODEBUILD_WEBHOOK_HEAD_REF") 
-       - export CX_PROJECT_NAME=$(echo "$CODEBUILD_BUILD_ID" | cut -f1 -d:)
+       - export CX_PROJECT=$(echo "$CODEBUILD_BUILD_ID" | cut -f1 -d:)
        - |
          java -jar /app/cx-flow.jar \
-           --scan \
-           --cx-project="$CX_REPO_NAME"-"$CX_REPO_BRANCH" \
-           --app="$CX_REPO_NAME" \
-           --branch="$CX_REPO_BRANCH" \
-           --repo-name="$CX_REPO_NAME" \
-           --namespace="$CX_REPO_NAME" \
-           --f=. \
-           --cx-flow.enabled-vulnerability-scanners="$CHECKMARX_SCANNERS"  \
-           --checkmarx.version="9.0" \
-           --checkmarx.base-url="$CHECKMARX_SERVER" \
-           --checkmarx.client-secret="$CHECKMARX_CLIENT_SECRET" \
-           --checkmarx.username="$CHECKMARX_USERNAME" \
-           --checkmarx.password="$CHECKMARX_PASSWORD" \
-           --checkmarx.client-id="$CHECKMARX_CLIENT_ID" \
-           --cx-team="$CHECKMARX_TEAM" \
-           --checkmarx.preset="$CHECKMARX_PRESET" \
-           --checkmarx.scope="$CHECKMARX_SCOPE" \
-           --checkmarx.configuration="$CHECKMARX_CONFIGURATION" \
-           --cx-flow.bug-tracker="$CHECKMARX_BUGTRACKER" \
-           --cx-flow.bug-tracker-impl="$CHECKMARX_BUGTRACKER" \
-           --cx-flow.filter-severity="$CHECKMARX_FILTER_SEVERITIES" \
-           --cx-flow.filter-state="$CHECKMARX_FILTER_STATE" \
-           --checkmarx.exclude-folders="$CHECKMARX_EXCLUDE_FOLDERS" \
-           --checkmarx.exclude-files="$CHECKMARX_EXCLUDE_FILES" \
-           "$ADDITIONAL_PARAMS"
-
+          --scan \
+          --app="${CX_REPO_NAME}" \
+          --namespace="${CX_REPO_NAME}" \
+          --repo-name="${CX_REPO_NAME}" \
+          --repo-url="${CI_REPOSITORY_URL}" \
+          --cx-team="${CX_TEAM}" \
+          --cx-project="${CX_PROJECT}" \
+          --branch="${CX_REPO_BRANCH}" \
+          --spring.profiles.active="${CX_FLOW_ENABLED_VULNERABILITY_SCANNERS}" \
+          --f=. 
+          ${PARAMS}
