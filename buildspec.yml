@@ -31,7 +31,7 @@ phases:
        - export CX_REPO_BRANCH=$(basename "$CODEBUILD_WEBHOOK_HEAD_REF") 
        - |
          if expr "${CX_REPO_BRANCH}"; then
-           export CX_PROJECT=$(echo "$CODEBUILD_BUILD_ID" | cut -f1 -d:)-$(CX_REPO_BRANCH)
+           export CX_PROJECT=$(echo "$CODEBUILD_BUILD_ID" | cut -f1 -d:)-${CX_REPO_BRANCH}
          else
            export CX_PROJECT=$(echo "$CODEBUILD_BUILD_ID" | cut -f1 -d:)
          fi
