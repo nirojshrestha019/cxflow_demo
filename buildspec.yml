@@ -29,7 +29,12 @@ phases:
     commands: 
        - export CX_REPO_NAME=$(basename "$CODEBUILD_SOURCE_REPO_URL" .git)
        - export CX_REPO_BRANCH=$(basename "$CODEBUILD_WEBHOOK_HEAD_REF") 
-       - export CX_PROJECT=$(echo "$CODEBUILD_BUILD_ID" | cut -f1 -d:)
+       - |
+         if expr "${CX_REPO_BRANCH}"; then
+           export CX_PROJECT=$(echo "$CODEBUILD_BUILD_ID" | cut -f1 -d:)-$(CX_REPO_BRANCH)
+         else
+           export CX_PROJECT=$(echo "$CODEBUILD_BUILD_ID" | cut -f1 -d:)
+         fi
        - |
          java -jar /app/cx-flow.jar \
           --scan \
