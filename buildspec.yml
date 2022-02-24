@@ -27,7 +27,7 @@ env:
 phases: 
   pre_build: 
     commands: 
-       - echo "start 2"
+       - echo "start 3"
        - export CX_REPO_NAME=$(basename "$CODEBUILD_SOURCE_REPO_URL" .git)
        - export CX_REPO_BRANCH=$(basename "$CODEBUILD_WEBHOOK_HEAD_REF") 
        - |
